@@ -12,7 +12,7 @@ def read_article(file_name):
     filedata = file.read()
     sentences = sent_tokenize(filedata)
     return sentences
-#
+#goes through each sentence in the text file, looking for similarities between them.
 def sentence_similarity(sent1,sent2,stopwords=None):
     if stopwords is None:
         stopwords =[]
@@ -32,6 +32,7 @@ def sentence_similarity(sent1,sent2,stopwords=None):
             continue
         vector2[all_words.index(w)] += 1
     return 1-cosine_distance(vector1,vector2)
+#generating a similarity matrix based on the similarities found in the sentences, it stores the sentences into an array(similarity matrix)
 def gen_sim_matrix(sentences,stop_words):
     similarity_matrix = np.zeros((len(sentences),len(sentences)))
     for idx1 in range(len(sentences)):
@@ -40,7 +41,10 @@ def gen_sim_matrix(sentences,stop_words):
                 continue
             similarity_matrix[idx1][idx2]=sentence_similarity(sentences[idx1],sentences[idx2],stop_words)
     return similarity_matrix
-
+#this generates the summary by getting sentences via read_article, generating a similarity matrix via the sentences in the article, putting it inside a graph
+#then using pagerank to keep score on the most relevant topics in the sentence.
+#then, the sentences are ranked in order from greatest to least, then appended in that same order of importance.
+#the summary is then printed.
 def generate_summary(file_name,top_n=5):
     stop_words=stopwords.words('english')
     summarize_text=[]
