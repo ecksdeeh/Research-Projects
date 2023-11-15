@@ -7,7 +7,7 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 #takes file name as input, opens and reads the file, uses sent_tokenize to split text into sentences, and then returns them.
-def read_article(file_name):
+def read_file(file_name):
     file = open(file_name, "r")
     filedata = file.read()
     sentences = sent_tokenize(filedata)
@@ -15,7 +15,7 @@ def read_article(file_name):
 #goes through each sentence in the text file, looking for similarities between them.
 def sentence_similarity(sent1,sent2,stopwords=None):
     if stopwords is None:
-        stopwords =[]
+        stopwords = []
     #helps get only unique words in the list
     sent1 = [w.lower() for w in sent1]
     sent2 = [w.lower() for w in sent2]

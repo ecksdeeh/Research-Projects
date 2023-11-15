@@ -1,5 +1,18 @@
-Ever feel like you don’t have enough time to read everything that you want to? What if you could run a routine that summarized documents for you, whether it’s your favorite news source, academic articles, or work-related documents?Text summarization is a Natural Language Processing (NLP) task that summarizes the information in large texts for quicker consumption without losing vital information. Your favourite news aggregator (such as Google News) takes advantage of text summarization algorithms in order to provide you with information you need to know whether the article is relevant or not without having to click the link.
-
-
-
-
+The process of establishing the services that a customer
+requires from a system and the constraints under which
+it operates and is developed.
+The system requirements are the descriptions of the
+system services and constraints that are generated
+during the requirements engineering process.
+Chapter 4 Requirements Engineering 7
+What is a requirement?
+It may range from a high-level abstract statement of a
+service or of a system constraint to a detailed
+mathematical functional specification.
+This is inevitable as requirements may serve a dual
+function
+May be the basis for a bid for a contract - therefore must be open
+to interpretation;
+May be the basis for the contract itself - therefore must be
+defined in detail;
+Both these statements may be called requirements
