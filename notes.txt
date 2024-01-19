@@ -1,18 +1,6 @@
-The process of establishing the services that a customer
-requires from a system and the constraints under which
-it operates and is developed.
-The system requirements are the descriptions of the
-system services and constraints that are generated
-during the requirements engineering process.
-Chapter 4 Requirements Engineering 7
-What is a requirement?
-It may range from a high-level abstract statement of a
-service or of a system constraint to a detailed
-mathematical functional specification.
-This is inevitable as requirements may serve a dual
-function
-May be the basis for a bid for a contract - therefore must be open
-to interpretation;
-May be the basis for the contract itself - therefore must be
-defined in detail;
-Both these statements may be called requirements
+Random Forest is a type of ensemble machine learning algorithm called bagging. It is a popular variation of bagged decision trees. 
+A decision tree is a branched model that consists of a hierarchy of decision nodes, where each decision node splits the data based on a decision rule. Training a decision tree involves a greedy selection of the best split points (i.e., points that divide the input space best) by minimizing a cost function. 
+The greedy approach through which decision trees construct their decision boundaries makes them susceptible to high variance. This means that small changes in the training dataset can lead to very different tree structures and, in turn, model predictions. If the decision tree is not pruned, it will also tend to capture noise and outliers in the training data. This sensitivity to the training data makes decision trees susceptible to overfitting. 
+Bagged decision trees address this susceptibility by combining the predictions from multiple decision trees, each trained on a bootstrap sample of the training dataset created by sampling the dataset with replacement. The limitation of this approach stems from the fact that the same greedy approach trains each tree, and some samples may be picked several times during training, making it very possible that the trees share similar (or the same) split points (hence, resulting in correlated trees). 
+The Random Forest algorithm tries to mitigate this correlation by training each tree on a random subset of the training data, created by randomly sampling the dataset without replacement. In this manner, the greedy algorithm can only consider a fixed subset of the data to create the split points that make up each tree, which forces the trees to be different. 
+In the case of a classification problem, every tree in the forest produces a prediction output, and the final class label is identified as the output that the majority of the trees have produced. In the case of regression, the final output is the average of the outputs produced by all the trees. 

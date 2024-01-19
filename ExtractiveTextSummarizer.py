@@ -48,7 +48,7 @@ def gen_sim_matrix(sentences,stop_words):
 def generate_summary(file_name,top_n=5):
     stop_words=stopwords.words('english')
     summarize_text=[]
-    sentences = read_article(file_name)
+    sentences = read_file(file_name)
     sentence_similarity_matrix = gen_sim_matrix(sentences,stop_words)
     sentence_similarity_graph = nx.from_numpy_array(sentence_similarity_matrix)
     scores = nx.pagerank(sentence_similarity_graph)
@@ -57,6 +57,6 @@ def generate_summary(file_name,top_n=5):
         summarize_text.append("".join(ranked_sentence[i][1]))
     print("Summary \n", ". ".join(summarize_text))
 
-generate_summary("notes.txt", 2)
+generate_summary("notes.txt", 7)
     
                 
