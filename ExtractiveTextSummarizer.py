@@ -20,9 +20,11 @@ def sentence_similarity(sent1,sent2,stopwords=None):
     sent1 = [w.lower() for w in sent1]
     sent2 = [w.lower() for w in sent2]
     all_words = list(set(sent1+sent2))
-  #creating vectors  
+  #initialize vectors  
     vector1 = [0] *len(all_words)
     vector2 = [0] *len(all_words)
+    #Iterate through each sentence, checks if any words are in 'stopwords'
+    #indexes, and increments by 1
     for w in sent1:
         if w in stopwords:
             continue
@@ -31,10 +33,13 @@ def sentence_similarity(sent1,sent2,stopwords=None):
         if w in stopwords:
             continue
         vector2[all_words.index(w)] += 1
+    # calculates cosine distance, subtracts by 1 in order to calculate cosine similarity
     return 1-cosine_distance(vector1,vector2)
 #generating a similarity matrix based on the similarities found in the sentences, it stores the sentences into an array(similarity matrix)
 def gen_sim_matrix(sentences,stop_words):
+    #initialize numpy array with np.zeros. dimensions are the length of the sentences
     similarity_matrix = np.zeros((len(sentences),len(sentences)))
+    #calculate scores by iteration, iterates through all sentences, if equal, skips.
     for idx1 in range(len(sentences)):
         for idx2 in range(len(sentences)):
             if idx1 == idx2:
@@ -57,6 +62,6 @@ def generate_summary(file_name,top_n=5):
         summarize_text.append("".join(ranked_sentence[i][1]))
     print("Summary \n", ". ".join(summarize_text))
 
-generate_summary("notes.txt", 7)
+generate_summary("BlogNotes.txt", 3)
     
                 
