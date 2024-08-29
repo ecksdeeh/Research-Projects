@@ -7,10 +7,11 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 #takes file name as input, opens and reads the file, uses sent_tokenize to split text into sentences, and then returns them.
-def read_file(file_name):
-    file = open(file_name, "r")
-    filedata = file.read()
-    sentences = sent_tokenize(filedata)
+
+def read_file(file_name, encoding='utf-8'):
+    with open(file_name, "r", encoding=encoding) as file:
+        filedata = file.read()
+        sentences = sent_tokenize(filedata)
     return sentences
 #goes through each sentence in the text file, looking for similarities between them.
 def sentence_similarity(sent1,sent2,stopwords=None):
@@ -60,8 +61,11 @@ def generate_summary(file_name,top_n=5):
     ranked_sentence=sorted(((scores[i],s)for i,s in enumerate(sentences)),reverse=True)
     for i in range(top_n):
         summarize_text.append("".join(ranked_sentence[i][1]))
-    print("Summary \n", ". ".join(summarize_text))
+    print("Summary \n"," ".join(summarize_text))
+file_names = ["BlogNotes.txt", "notes.txt"]
+for file_name in file_names:
+    summary = generate_summary(file_name, 5)
+    print(f"Summary for {file_name}:\n{summary}\n")
 
-generate_summary("BlogNotes.txt", 3)
     
                 
