@@ -6,8 +6,4 @@ The Random Forest algorithm tries to mitigate this correlation by training each 
 <<<<<<< HEAD
 In the case of a classification problem, every tree in the forest produces a prediction output, and the final class label is identified as the output that the majority of the trees have produced. In the case of regression, the final output is the average of the outputs produced by all the trees. 
 =======
-In the case of a classification problem, every tree in the forest produces a prediction output, and the final class label is identified as the output that the majority of the trees have produced. In the case of regression, the final output is the average of the outputs produced by all the trees. 
-
-Cristina, Stefania. “Random Forest for Image Classification Using Opencv.” MachineLearningMastery.Com, 9 Jan. 2024, machinelearningmastery.com/random-forest-for-image-classification-using-opencv/. 
->>>>>>> 7ead0f96fc32ab28dc5947cd5f7744e7ae446ac5
-z
+In the case of a classification problem, every tree in the forest produces a prediction output, and the final class label is identified as the output that the majority of the trees have produced. In the case of regression, the final output is the average of the outputs produced by all the trees.
