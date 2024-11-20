@@ -80,14 +80,14 @@ def generate_summary(file_name, top_n=5):
     
     print("Summary:\n", summary)
     
-    pos_choice = input('Do you wish to see each word tagged? (Type Y/N): ').lower()
+    #pos_choice = input('Do you wish to see each word tagged? (Type Y/N): ').lower()
     
-    if pos_choice == 'y':
-        words = word_tokenize(" ".join(sentences))  # Tokenize entire text
-        pos_tags = pos_tag(words)
-        print("\nPOS Tagging Results:")
-        for word, pos_tagged in pos_tags:
-            print(f'{word}: {pos_tagged}')
+    #if pos_choice == 'y':
+        #words = word_tokenize(" ".join(sentences))  # Tokenize entire text
+        #pos_tags = pos_tag(words)
+        #print("\nPOS Tagging Results:")
+        #for word, pos_tagged in pos_tags:
+            #print(f'{word}: {pos_tagged}')
     
     return summary
 
@@ -100,7 +100,9 @@ def topic_segmentation(file_name):
         raw_text = file.read()
 
     # Perform topic segmentation
-    segments = text_tiling_tokenizer.tokenize(raw_text)
+    #If text is NOT long, skip segmentation; else: continue with segmentation
+   #Specificications with the length of tokens, in order to achieve this
+        segments = text_tiling_tokenizer.tokenize(raw_text)
     
     print("\nTopic Segments:")
     for idx, segment in enumerate(segments):
@@ -109,7 +111,7 @@ def topic_segmentation(file_name):
     return segments
 
 # List of files to summarize and segment
-file_names = ["notes.txt", "BlogNotes.txt"]
+file_names = ["notes.md", "BlogNotes.md", "Essay.md"]
 
 for file_name in file_names:
     # First, perform topic segmentation
